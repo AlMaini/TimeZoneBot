@@ -17,7 +17,7 @@ async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
     update_timezones.start()
 
-@tasks.loop(minutes=5)
+@tasks.loop(minutes=1)
 async def update_timezones():
     guild = bot.get_guild(568785003639472184)
     category_name = 'Time Zones'
