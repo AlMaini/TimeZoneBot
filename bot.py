@@ -19,7 +19,8 @@ async def on_ready():
 
 @tasks.loop(minutes=5)
 async def update_timezones():
-    guild = bot.get_guild(568785003639472184)
+    SERVER_ID = 0
+    guild = bot.get_guild(SERVER_ID)
     category_name = 'Time Zones'
     category = discord.utils.get(guild.categories, name=category_name)
     voice_channels = [channel for channel in category.voice_channels]
@@ -37,4 +38,5 @@ async def update_timezones():
         channel_name = f'{tz_name} {current_time}'
         await channel.edit(name=channel_name)
 
-bot.run('MTE1MDIxMTYyODg2MDcxNTAwOA.Gb5kxe.pPh59o-MjDx4HgMblbNs83RiedSfphulQiVG3k')
+YOUR_BOT_TOKEN = ''
+bot.run(YOUR_BOT_TOKEN)
